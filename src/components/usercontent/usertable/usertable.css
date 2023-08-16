@@ -82,6 +82,24 @@ table {
     cursor: pointer;
   }
 
+  .edit-box{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    width: 400px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    padding: 20px;
+    border-radius: 3px;
+    min-height: 60vh;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(148,148,148,1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(148,148,148,1);
+    box-shadow: 0px 0px 8px 0px rgba(148,148,148,1);
+  }
+
+
+
 
   @media screen and (max-width: 900px) {
     .btns-container{
@@ -97,5 +115,9 @@ table {
       }
        .table-styles{
         width: 100%;
+      }
+
+      .edit-box{
+        width:90%;
       }
   }

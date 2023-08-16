@@ -96,7 +96,7 @@ const UserTable = ({ users, setUsers, baseUrl }) => {
             return (
               <tbody key={e?._id}>
                 {editUserId === e._id ? (
-                  <Box sx={style}>
+                  <div className="edit-box">
                     <p
                       className="close-styles"
                       onClick={() => setEditUserId("")}
@@ -169,7 +169,7 @@ const UserTable = ({ users, setUsers, baseUrl }) => {
                         Save
                       </button>
                     </div>
-                  </Box>
+                  </div>
                 ) : (
                   <tr>
                     <td>{e?.name}</td>
