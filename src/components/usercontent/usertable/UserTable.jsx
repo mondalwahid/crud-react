@@ -2,21 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./usertable.css";
-import Box from "@mui/material/Box";
-
-const style = {
-  position: "absolute",
-  top: "0%",
-  left: "50%",
-  transform: "translate(-50%, -0%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "1px solid #fff",
-  boxShadow: 24,
-  p: 4,
-  borderRadius: 1,
-  minHeight: "60vh",
-};
 
 const UserTable = ({ users, setUsers, baseUrl }) => {
   const [editUserId, setEditUserId] = useState("");
