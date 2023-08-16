@@ -4,6 +4,7 @@ import UserTable from "./usertable/UserTable";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import axios from "axios";
+import "./usercontent.css";
 
 const style = {
   position: "absolute",
@@ -61,38 +62,12 @@ const UserContent = () => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        backgroundColor: "#fff",
-        minHeight: "90vh",
-        width: "40%",
-        paddingTop: "1rem",
-        borderRadius: 5,
-      }}
-    >
+    <div className="main-container">
       <h2 style={{ textAlign: "center" }}>List of Users</h2>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "column",
-        }}
-      >
+      <div className="sub-container">
         <button
           onClick={handleOpenAddUserModalFunction}
-          style={{
-            backgroundColor: "#4BB543",
-            color: "#fff",
-            width: 100,
-            padding: "8px 0",
-            borderRadius: 3,
-            border: "none",
-            cursor: "pointer",
-          }}
+          className="add-user-btn"
         >
           Add User
         </button>
@@ -100,7 +75,9 @@ const UserContent = () => {
           users={users}
           setUsers={setUsers}
           baseUrl={baseUrl}
-          q
+          name={name}
+          age={age}
+          designation={designation}
           openAddUserModal={openAddUserModal}
           setOpenAddUserModal={setOpenAddUserModal}
         />
@@ -119,27 +96,42 @@ const UserContent = () => {
               </h2>
               <form>
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <label>
-                    Name:
+                  <div className="inputs-container">
+                    <p className="label-styles">Name:</p>
                     <input
                       type="text"
                       value={name}
                       onChange={handleNameChange}
+                      className="input-styles"
                     />
-                  </label>
-                  <label>
-                    Age:
-                    <input type="text" value={age} onChange={handleAgeChange} />
-                  </label>
-                  <label>
-                    Designation:
+                  </div>
+                  <div className="inputs-container">
+                    <p className="label-styles">Age:</p>
+                    <input
+                      type="text"
+                      value={age}
+                      onChange={handleAgeChange}
+                      className="input-styles"
+                    />
+                  </div>
+                  <div className="inputs-container">
+                    <p className="label-styles">Designation:</p>
                     <input
                       type="text"
                       value={designation}
                       onChange={handleDesignationChange}
+                      className="input-styles"
                     />
-                  </label>
-                  <button onClick={handleAddUser} style={{ cursor: "pointer" }}>
+                  </div>
+                  <button
+                    className="submit-btn"
+                    onClick={handleAddUser}
+                    style={{
+                      backgroundColor:
+                        !name || !age || !designation ? "#9c9c9c" : "#2243b6",
+                    }}
+                    disabled={!name || !age || !designation ? true : false}
+                  >
                     Submit
                   </button>
                 </div>
